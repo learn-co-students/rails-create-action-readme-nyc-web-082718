@@ -40,3 +40,77 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (16.8ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2018-09-24 15:15:04.184812"], ["updated_at", "2018-09-24 15:15:04.184812"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+
+
+Started GET "/posts" for ::1 at 2018-09-24 11:18:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (11.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 1047ms (Views: 1004.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2018-09-24 11:18:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2018-09-24 11:18:27 -0400
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2018-09-24 11:18:27 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2018-09-24 11:18:27 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2018-09-24 11:18:27 -0400
+
+
+Started GET "/posts/new" for ::1 at 2018-09-24 11:18:41 -0400
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 127ms (Views: 107.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2018-09-24 11:18:47 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uOa2yr7OQf2ns8FY0GGKHcp1ky5LP0f/J7EEsDhpz3KXee6TdZ7rqHXWd++eW+0MJPdDf4rKJQzCY7mUletdYA==", "title"=>"hi", "description"=>"hi", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "hi"], ["description", "hi"], ["created_at", "2018-09-24 15:18:47.890813"], ["updated_at", "2018-09-24 15:18:47.890813"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  Rendered posts/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 67ms (Views: 28.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts" for ::1 at 2018-09-24 11:19:56 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 287ms (Views: 281.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-09-24 11:20:05 -0400
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2018-09-24 11:20:12 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b1g0SAB0bWN8A19ZQ+Z5Q14RNnN6ktb8Km6k0fpmnOVAx2wRyyTHNq5m6e4N3B5SsJPmIrtntA/PvBn1V+QO9w==", "title"=>"hello", "description"=>"hello\r\n", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (38.9ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "hello"], ["description", "hello\r\n"], ["created_at", "2018-09-24 15:20:12.263468"], ["updated_at", "2018-09-24 15:20:12.263468"]]
+  [1m[36m (4.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 48ms (ActiveRecord: 43.6ms)
+
+
+Started GET "/posts/4" for ::1 at 2018-09-24 11:20:12 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.6ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1199ms (Views: 18.1ms | ActiveRecord: 0.6ms)
